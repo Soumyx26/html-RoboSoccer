@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robo Soccer - Live Scorecard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">ROBO SOCCER</h1>
+      <p class="subtitle">Live Championship Scorecard</p>
+    </header>
+
+    <div class="match-info">
+      <div class="info-card">
+        <div class="info-label">Match Time</div>
+        <div class="info-value timer" id="timer">00:00</div>
+      </div>
+    </div>
+
+    <div class="scoreboard">
+      <div class="team" id="team1">
+        <h2 class="team-name" contenteditable="true">Team 1</h2>
+        <div class="score" id="score1">0</div>
+        <div class="controls">
+          <button class="btn btn-score" onclick="changeScore('team1',1)">+1 Goal</button>
+          <button class="btn btn-minus" onclick="changeScore('team1',-1)">-1</button>
+        </div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team" id="team2">
+        <h2 class="team-name" contenteditable="true">Team 2</h2>
+        <div class="score" id="score2">0</div>
+        <div class="controls">
+          <button class="btn btn-score" onclick="changeScore('team2',1)">+1 Goal</button>
+          <button class="btn btn-minus" onclick="changeScore('team2',-1)">-1</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reset-controls">
+      <button class="btn-reset" onclick="resetMatch()">Reset Match</button>
+      <button id="timerBtn" onclick="toggleTimer()">Start Timer</button>
+    </div>
+  </div>
+
+  <!-- Overlays -->
+  <div id="goalOverlay" class="overlay"></div>
+  <div id="timeUpOverlay" class="overlay">TIME'S UP!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
